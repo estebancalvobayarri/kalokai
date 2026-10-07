@@ -25,9 +25,9 @@ Tipografías: Bricolage Grotesque para titulares y Figtree para textos.
 
 Logo: la palabra «kalokai» junto al símbolo de la persona que crece (un círculo ámbar sobre un arco abierto).
 
-## Pendiente
+## Contacto
 
-- Confirmar el correo de contacto (ahora `hola@kalokai.com`, en `index.html` y `script.js`).
+El formulario y el enlace de contacto usan `hola@kalokai.es` (en `index.html` y `script.js`).
 
 ## Publicación
 

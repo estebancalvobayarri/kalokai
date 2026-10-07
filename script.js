@@ -12,7 +12,7 @@
   // Formulario de contacto: prepara un correo con los datos
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
-  var DESTINO = 'hola@kalokai.com';
+  var DESTINO = 'hola@kalokai.es';
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
