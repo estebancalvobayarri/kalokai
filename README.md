@@ -28,4 +28,7 @@ Logo: la palabra «kalokai» junto al símbolo de la persona que crece (un círc
 ## Pendiente
 
 - Confirmar el correo de contacto (ahora `hola@kalokai.com`, en `index.html` y `script.js`).
-- Publicar con GitHub Pages: Settings → Pages → rama `main`, carpeta raíz.
+
+## Publicación
+
+La web se publica con GitHub Pages desde la rama `main` en el dominio `www.kalokai.es` (archivo `CNAME`).
