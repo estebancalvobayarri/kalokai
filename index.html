@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalokai · Formación para empresas en salud, negocio y tecnología</title>
-  <meta name="description" content="Kalokai es formación para empresas inspirada en la kalokagathía, el ideal griego de la persona completa. Programas conectados en salud, negocio y tecnología.">
+  <title>Kalokai · Formación para empresas que empieza por las personas</title>
+  <meta name="description" content="Kalokai acompaña a los equipos de tu empresa a crecer como profesionales y como personas, con formación en salud, negocio y tecnología diseñada desde lo humano.">
+  <meta name="theme-color" content="#0E1726">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,11 +17,17 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="wordmark" href="#" aria-label="Kalokai, inicio">Kalokai</a>
+      <a class="logo" href="#" aria-label="Kalokai, inicio">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M18 46 A32 32 0 0 0 82 46" class="logo-arc"></path>
+          <circle cx="50" cy="27" r="15" class="logo-dot"></circle>
+        </svg>
+        <span class="logo-word">kalokai</span>
+      </a>
       <nav aria-label="Principal">
         <ul class="nav">
+          <li><a href="#enfoque">Nuestro enfoque</a></li>
           <li><a href="#areas">Áreas</a></li>
-          <li><a href="#origen">Origen</a></li>
           <li><a href="#metodo">Cómo trabajamos</a></li>
         </ul>
       </nav>
@@ -31,152 +38,131 @@
   <main id="contenido">
     <section class="hero">
       <div class="wrap hero-grid">
-        <h1 class="hero-title">
-          <span class="line">Salud</span>
-          <span class="line"><span class="kai">y</span> negocio</span>
-          <span class="line"><span class="kai">y</span> tecnología.</span>
-        </h1>
-        <div class="hero-side">
-          <p class="lede">Formación para empresas inspirada en la <em>kalokagathía</em>, el ideal griego de la persona completa.</p>
-          <p>Diseñamos programas en salud, negocio y tecnología que se piensan juntos, porque en tus equipos ocurren a la vez y en las mismas personas.</p>
+        <div class="hero-copy">
+          <h1 class="display">Formación que empieza por las personas.</h1>
+          <p class="lede">Acompañamos a los equipos de tu empresa a crecer como profesionales y como personas, con programas diseñados desde lo humano.</p>
           <div class="actions">
             <a class="btn" href="#contacto">Solicita una propuesta</a>
-            <a class="link" href="#areas">Conoce las tres áreas</a>
+            <a class="link" href="#enfoque">Conoce nuestro enfoque</a>
           </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="47" class="ring"></circle>
+            <path d="M18 46 A32 32 0 0 0 82 46" class="art-arc"></path>
+            <circle cx="50" cy="27" r="15" class="art-dot"></circle>
+          </svg>
         </div>
       </div>
     </section>
 
-    <section class="problem" aria-labelledby="problem-title">
-      <div class="wrap split">
-        <h2 id="problem-title" class="h2">Formamos a las personas por partes. Ellas no funcionan así.</h2>
-        <div class="prose">
-          <p>Un curso de liderazgo el lunes, uno de herramientas digitales el miércoles y un programa de bienestar que nadie conecta con lo anterior. Tres proveedores, tres lenguajes y una persona que sigue igual de cansada y de desbordada.</p>
-          <p>Un equipo agotado no ejecuta bien la estrategia. Una estrategia brillante fracasa si el equipo no domina sus herramientas. Y la mejor tecnología no sirve de nada sin energía ni criterio para usarla.</p>
-          <p>Kalokai forma a la persona entera, y con ella, a la organización entera.</p>
+    <section id="enfoque" class="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="approach-head">
+          <h2 id="approach-title" class="h2">Antes que alumnos, personas.</h2>
+          <p class="intro">Cada persona llega a una formación con su historia, su momento y sus ganas de mejorar. Por eso no empezamos por el temario, sino por quien va a aprender.</p>
         </div>
+        <ul class="principles">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a5 5 0 0 0-5 5c0 3 2 4 2 7h6c0-3 2-4 2-7a5 5 0 0 0-5-5Z"/><path d="M10 19h4M10.5 22h3"/></svg>
+            <h3>Escuchamos primero</h3>
+            <p>Hablamos con las personas antes de diseñar nada. Sus inquietudes y su forma de trabajar marcan el programa.</p>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h10M10 6l6 6-6 6"/><path d="M20 4v16"/></svg>
+            <h3>Aprender con sentido</h3>
+            <p>Lo que se aprende se conecta con el día a día. Si no cambia algo el lunes siguiente, no ha servido.</p>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7Z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5Z"/></svg>
+            <h3>Crecer sin desgastarse</h3>
+            <p>El bienestar forma parte del aprendizaje. Queremos equipos que mejoren y que lo puedan sostener en el tiempo.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="statement" aria-label="Lo que creemos">
+      <div class="wrap statement-inner">
+        <span class="bar" aria-hidden="true"></span>
+        <p>Cuando una persona crece, su equipo crece con ella. Y cuando crecen los equipos, crece la empresa.</p>
       </div>
     </section>
 
     <section id="areas" class="areas" aria-labelledby="areas-title">
       <div class="wrap">
-        <h2 id="areas-title" class="h2 narrow">Tres áreas que se entienden mejor juntas</h2>
+        <div class="section-head">
+          <h2 id="areas-title" class="h2">Tres áreas para crecer de forma completa</h2>
+          <p class="intro">Puedes trabajar un área concreta o combinarlas en un mismo programa. Siempre adaptadas a tu equipo.</p>
+        </div>
         <div class="area-grid">
-          <article class="area area-salud">
+          <article class="area">
             <h3>Salud</h3>
-            <p class="root">Del gimnasio griego: cuidar el cuerpo y la mente.</p>
-            <p>Energía, bienestar y resiliencia para sostener el rendimiento sin quemar a las personas.</p>
+            <p class="area-tag">Sentirse bien para trabajar bien.</p>
             <ul>
               <li>Gestión del estrés y de la energía</li>
               <li>Salud mental en el trabajo</li>
-              <li>Ergonomía y hábitos saludables</li>
-              <li>Descanso y recuperación</li>
+              <li>Hábitos saludables y ergonomía</li>
+              <li>Descanso y desconexión</li>
             </ul>
           </article>
-          <article class="area area-negocio">
+          <article class="area">
             <h3>Negocio</h3>
-            <p class="root">De la ágora: el carácter que se demuestra actuando con otros.</p>
-            <p>Criterio, liderazgo y capacidad de ejecución para decidir bien y llevar las decisiones a término.</p>
+            <p class="area-tag">Liderar, decidir y colaborar mejor.</p>
             <ul>
               <li>Liderazgo y gestión de equipos</li>
-              <li>Estrategia y toma de decisiones</li>
               <li>Comunicación y negociación</li>
+              <li>Estrategia y toma de decisiones</li>
               <li>Gestión de proyectos</li>
             </ul>
           </article>
-          <article class="area area-tec">
+          <article class="area">
             <h3>Tecnología</h3>
-            <p class="root">De la <em>techné</em>: el saber hacer, el oficio bien aprendido.</p>
-            <p>Dominio de las herramientas y capacidad de adaptarse al cambio con criterio, no por moda.</p>
+            <p class="area-tag">Usar la tecnología con confianza.</p>
             <ul>
               <li>Inteligencia artificial aplicada</li>
-              <li>Transformación digital</li>
+              <li>Competencias digitales</li>
               <li>Ciberseguridad para equipos</li>
-              <li>Datos para la toma de decisiones</li>
+              <li>Datos para tomar decisiones</li>
             </ul>
           </article>
-        </div>
-
-        <div class="bridges">
-          <div class="bridges-intro">
-            <h3 class="h3">La diferencia está en la «y»</h3>
-            <p>Puedes contratar un área concreta. Cada programa incluye el hilo que la conecta con las otras dos.</p>
-          </div>
-          <ul class="bridge-list">
-            <li>
-              <span class="pair" aria-hidden="true"><i class="dot negocio"></i><i class="dot salud"></i></span>
-              <span><strong>Liderazgo con energía.</strong> Dirigir equipos sin agotarse ni agotar a nadie.</span>
-              <span class="pair-label">Negocio y salud</span>
-            </li>
-            <li>
-              <span class="pair" aria-hidden="true"><i class="dot tec"></i><i class="dot negocio"></i></span>
-              <span><strong>IA para decidir mejor.</strong> Qué cambia en la forma de decidir y de trabajar en equipo.</span>
-              <span class="pair-label">Tecnología y negocio</span>
-            </li>
-            <li>
-              <span class="pair" aria-hidden="true"><i class="dot salud"></i><i class="dot tec"></i></span>
-              <span><strong>Bienestar digital.</strong> Atención, notificaciones y desconexión en la jornada conectada.</span>
-              <span class="pair-label">Salud y tecnología</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="origen" class="origin" aria-labelledby="origin-title">
-      <div class="wrap origin-grid">
-        <p class="greek" lang="grc" aria-hidden="true">καλὸς<br><span class="kai">καὶ</span><br>ἀγαθός</p>
-        <div class="origin-text">
-          <h2 id="origin-title" class="h2">Una palabra griega que termina en «y»</h2>
-          <p>Hace unos 2.500 años, los griegos llamaban <em>kalokagathía</em> al ideal de la persona plenamente desarrollada. La palabra une <em>kalós</em>, lo bello y bien hecho, y <em>agathós</em>, lo bueno y valioso, enlazados por <em>kai</em>: «y».</p>
-          <p>Para ellos la excelencia no era una especialidad, sino un equilibrio entre cuerpo, carácter y mente. En el gimnasio de Atenas se entrenaba, se conversaba y se aprendía en el mismo lugar.</p>
-          <p>Nuestro nombre toma <em>kalós</em> + <em>kai</em> y se detiene en la conjunción a propósito. La frase queda abierta para que cada persona y cada empresa la completen con su propio camino.</p>
         </div>
       </div>
     </section>
 
     <section id="metodo" class="method" aria-labelledby="method-title">
       <div class="wrap">
-        <h2 id="method-title" class="h2 narrow">Cómo trabajamos</h2>
+        <div class="section-head">
+          <h2 id="method-title" class="h2">Cómo trabajamos</h2>
+          <p class="intro">Un proceso cercano, de principio a fin, con las mismas personas acompañándote.</p>
+        </div>
         <ol class="steps">
           <li>
-            <h3>Diagnóstico</h3>
-            <p>Hablamos con dirección y con los equipos para entender qué necesita la organización, no solo qué curso se ha pedido.</p>
+            <h3>Conocemos a tu equipo</h3>
+            <p>Conversamos con dirección y con las personas que van a formarse para entender qué necesitan de verdad.</p>
           </li>
           <li>
-            <h3>Diseño a medida</h3>
-            <p>Construimos el programa con contenidos de las tres áreas en la proporción que tu empresa necesita.</p>
+            <h3>Diseñamos a medida</h3>
+            <p>Creamos un programa pensado para tu equipo, su ritmo y sus objetivos.</p>
           </li>
           <li>
-            <h3>Impartición</h3>
-            <p>Presencial, en remoto o mixta, con formadores que trabajan en lo que enseñan.</p>
+            <h3>Acompañamos el aprendizaje</h3>
+            <p>Sesiones presenciales, en remoto o mixtas, con formadores que trabajan en lo que enseñan.</p>
           </li>
           <li>
-            <h3>Seguimiento</h3>
-            <p>Medimos qué ha cambiado en el trabajo diario y ajustamos el programa con esos datos.</p>
+            <h3>Medimos el crecimiento</h3>
+            <p>Revisamos qué ha cambiado en el día a día y ajustamos el programa con lo aprendido.</p>
           </li>
         </ol>
-        <p class="note">Te ayudamos a gestionar la bonificación de la formación a través de FUNDAE.</p>
-      </div>
-    </section>
-
-    <section class="manifesto" aria-label="Manifiesto">
-      <div class="wrap">
-        <blockquote>
-          <p>Creemos que nadie es solo su puesto de trabajo.</p>
-          <p>Que una persona cansada no lidera bien, y que una empresa que no cuida a su gente no crece de verdad.</p>
-          <p>Que la tecnología es una herramienta, no un destino.</p>
-          <p>Que el negocio también es una forma de carácter: decidir, cumplir y construir con otros.</p>
-        </blockquote>
       </div>
     </section>
 
     <section id="contacto" class="contact" aria-labelledby="contact-title">
-      <div class="wrap split">
-        <div>
-          <h2 id="contact-title" class="h2">Cuéntanos qué necesita tu equipo</h2>
-          <p class="contact-copy">Te responderemos en dos días laborables con una primera propuesta o una llamada para conocer mejor el caso.</p>
-          <p class="contact-direct">También puedes escribir a <a href="mailto:hola@kalokai.com">hola@kalokai.com</a></p>
+      <div class="wrap contact-card">
+        <div class="contact-copy">
+          <h2 id="contact-title" class="h2">Hablemos de tu equipo</h2>
+          <p>Cuéntanos qué te gustaría conseguir. Te responderemos en dos días laborables con una primera propuesta o una llamada para conocernos.</p>
+          <p class="contact-direct">También puedes escribirnos a <a href="mailto:hola@kalokai.com">hola@kalokai.com</a></p>
         </div>
         <form class="form" id="contact-form" novalidate>
           <div class="field">
@@ -198,11 +184,11 @@
               <option>Salud</option>
               <option>Negocio</option>
               <option>Tecnología</option>
-              <option>Un programa que combine varias</option>
+              <option>Varias áreas</option>
             </select>
           </div>
           <div class="field field-wide">
-            <label for="mensaje">¿Qué te gustaría conseguir?</label>
+            <label for="mensaje">¿Qué te gustaría conseguir con tu equipo?</label>
             <textarea id="mensaje" name="mensaje" rows="4"></textarea>
           </div>
           <div class="field-wide form-foot">
@@ -216,10 +202,14 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <div>
-        <span class="wordmark">Kalokai</span>
-        <p>Formación para la persona completa.</p>
-      </div>
+      <a class="logo" href="#" aria-label="Kalokai, volver arriba">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M18 46 A32 32 0 0 0 82 46" class="logo-arc"></path>
+          <circle cx="50" cy="27" r="15" class="logo-dot"></circle>
+        </svg>
+        <span class="logo-word">kalokai</span>
+      </a>
+      <p>Formación que empieza por las personas.</p>
       <p class="small">© 2026 Kalokai</p>
     </div>
   </footer>
