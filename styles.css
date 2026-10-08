@@ -387,7 +387,7 @@ p { margin: 0 0 1em; }
 /* Formación bonificada (FUNDAE) */
 
 .bonus { padding: var(--section) 0; }
-.bonus-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+.bonus-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px; }
 .bonus .h2 { max-width: 16em; }
 
 /* Contacto */
