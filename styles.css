@@ -403,9 +403,6 @@ p { margin: 0 0 1em; }
   padding: clamp(32px, 5vw, 72px);
   max-width: calc(var(--wrap) - 2 * var(--gutter));
 }
-.contact-copy p { color: var(--niebla); margin-top: 24px; max-width: 30em; }
-.contact-copy .contact-direct { color: var(--bruma); }
-.contact-direct a { color: var(--claro); text-decoration-color: var(--ambar); text-underline-offset: 4px; }
 
 .form {
   display: grid;
@@ -449,7 +446,15 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   flex-wrap: wrap;
 }
 .footer-inner p { margin: 0; color: var(--bruma); }
-.footer-inner .small { margin-left: auto; font-size: 0.9rem; }
+.footer-inner .small { font-size: 0.9rem; }
+.footer-mail {
+  margin-left: auto;
+  color: var(--claro);
+  text-decoration: underline;
+  text-decoration-color: var(--ambar);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
 
 /* Página: bienestar laboral */
 
@@ -539,6 +544,63 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .nav a { font-size: 0.925rem; }
 }
 
+/* Formulario emergente de solicitud */
+
+.form-dialog {
+  width: min(760px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--medianoche);
+  color: var(--claro);
+  padding: clamp(28px, 4vw, 48px);
+}
+.form-dialog::backdrop { background: rgba(14, 23, 38, 0.75); backdrop-filter: blur(4px); }
+.dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--linea);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--claro);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.dialog-close:hover { border-color: var(--ambar); }
+.dialog-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 0 56px 10px 0;
+}
+.dialog-intro { color: var(--bruma); margin: 0 0 28px; }
+.form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.form legend { font-size: 0.95rem; font-weight: 500; color: var(--niebla); margin-bottom: 8px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--niebla);
+}
+.chips input { width: auto; padding: 0; flex: none; accent-color: var(--ambar); margin: 0; }
+.chips label:has(input:checked) { border-color: var(--ambar); color: var(--claro); }
+.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; color: var(--niebla); }
+.check input { width: auto; padding: 0; flex: none; margin-top: 5px; accent-color: var(--ambar); }
+.optional { color: var(--bruma); font-weight: 400; }
+[hidden] { display: none !important; }
+
 /* Botón flotante de WhatsApp */
 
 .wa-float {
@@ -581,5 +643,5 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .facts { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .contact-card { border-radius: var(--radius-md); }
-  .footer-inner .small { margin-left: 0; }
+  .footer-mail { margin-left: 0; }
 }

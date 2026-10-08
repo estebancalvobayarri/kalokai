@@ -33,7 +33,7 @@
           <li><a href="bienestar-laboral.html">Bienestar laboral</a></li>
         </ul>
       </nav>
-      <a class="btn btn-small" href="#contacto">Hablemos</a>
+      <a class="btn btn-small" href="#solicitud" data-solicitud>Hablemos</a>
     </div>
   </header>
 
@@ -44,7 +44,7 @@
           <h1 class="display">Bienestar para tu empresa.</h1>
           <p class="lede">Formamos a tu equipo para que se cuide por dentro y por fuera: salud física, salud mental y un buen ambiente de trabajo. Porque una empresa es, ante todo, las personas que la forman.</p>
           <div class="actions">
-            <a class="btn" href="#contacto">Solicita una propuesta</a>
+            <a class="btn" href="#solicitud" data-solicitud>Solicita una propuesta</a>
             <a class="link" href="#enfoque">Conoce nuestro enfoque</a>
           </div>
         </div>
@@ -166,54 +166,13 @@
           <div>
             <p class="intro">Cada año, las empresas generan un crédito en FUNDAE con lo que cotizan por formación profesional. Nuestras formaciones se pueden bonificar con él, y nosotros nos encargamos de los trámites.</p>
             <div class="actions">
-              <a class="btn" href="#contacto">Consultar mi crédito</a>
+              <a class="btn" href="#solicitud-credito" data-solicitud="credito">Consultar mi crédito</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="contact" aria-labelledby="contact-title">
-      <div class="wrap contact-card">
-        <div class="contact-copy">
-          <h2 id="contact-title" class="h2">Hablemos de tu equipo</h2>
-          <p>Cuéntanos cómo está tu equipo y qué te gustaría mejorar. Te responderemos en dos días laborables con una primera propuesta o una llamada para conocernos.</p>
-          <p class="contact-direct">También puedes escribirnos a <a href="mailto:hola@kalokai.es">hola@kalokai.es</a></p>
-        </div>
-        <form class="form" id="contact-form" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="empresa">Empresa</label>
-            <input id="empresa" name="empresa" type="text" autocomplete="organization" required>
-          </div>
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="area">Área de interés</label>
-            <select id="area" name="area">
-              <option>Aún no lo tengo claro</option>
-              <option>Salud física</option>
-              <option>Salud mental</option>
-              <option>Equipo y ambiente</option>
-              <option>Varias áreas</option>
-            </select>
-          </div>
-          <div class="field field-wide">
-            <label for="mensaje">¿Qué te gustaría mejorar en tu equipo?</label>
-            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
-          </div>
-          <div class="field-wide form-foot">
-            <button class="btn" type="submit">Enviar solicitud</button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -226,6 +185,7 @@
         <span class="logo-word">kalokai</span>
       </a>
       <p>Bienestar para tu empresa.</p>
+      <a class="footer-mail" href="mailto:hola@kalokai.es">hola@kalokai.es</a>
       <p class="small">© 2026 Kalokai</p>
     </div>
   </footer>
