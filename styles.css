@@ -323,6 +323,7 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.04em;
   margin: 0 0 12px;
 }
+.hl { color: var(--ambar); font-weight: 700; }
 .area-tag { color: var(--ambar); font-weight: 500; margin: 0 0 28px; }
 .area ul { list-style: none; margin: auto 0 0; padding: 0; }
 .area li {
@@ -330,14 +331,6 @@ p { margin: 0 0 1em; }
   border-top: 1px solid var(--linea);
   color: var(--niebla);
   font-size: 0.995rem;
-}
-.area-who {
-  margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--linea);
-  color: var(--ambar);
-  font-size: 0.95rem;
-  font-weight: 500;
 }
 
 /* Método */
