@@ -78,7 +78,7 @@
     '      <textarea id="s-mensaje" name="mensaje" rows="3"></textarea>' +
     '    </div>' +
     '    <label class="check field-wide" data-solo="credito"><input type="checkbox" name="guia" checked> Enviadme también la guía de formación bonificada.</label>' +
-    '    <label class="check field-wide"><input type="checkbox" id="s-acepto" name="acepto" required> Acepto que Kalokai use estos datos para responder a mi solicitud.</label>' +
+    '    <label class="check field-wide"><input type="checkbox" id="s-acepto" name="acepto" required> <span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y acepto que Kalokai use estos datos para responder a mi solicitud.</span></label>' +
     '    <div class="field-wide form-foot">' +
     '      <button class="btn" type="submit">Enviar solicitud</button>' +
     '      <p class="form-status" id="solicitud-status" role="status" aria-live="polite"></p>' +

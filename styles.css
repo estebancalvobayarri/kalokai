@@ -544,6 +544,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .nav a { font-size: 0.925rem; }
 }
 
+/* Página: política de privacidad */
+
+.legal-section { padding: clamp(56px, 8vw, 104px) 0 var(--section); }
+.legal > * { max-width: 46em; }
+.legal h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 48px 0 14px;
+}
+.legal h2:first-child { margin-top: 0; }
+.legal p, .legal li { color: var(--niebla); }
+.legal strong { color: var(--claro); font-weight: 600; }
+.legal ul { margin: 0 0 1em; padding-left: 1.2em; display: grid; gap: 6px; }
+.legal a, .check a { color: var(--claro); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
+
+.footer-link { color: var(--bruma); font-size: 0.9rem; text-decoration: none; }
+.footer-link:hover, .footer-link[aria-current="page"] { color: var(--claro); }
+
 /* Formulario emergente de solicitud */
 
 .form-dialog {
