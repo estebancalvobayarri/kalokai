@@ -525,9 +525,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .cta-card p { color: var(--niebla); margin: 0; }
 .cta-card .actions { margin-top: 28px; }
 
-.sources { margin-top: 48px; color: var(--bruma); font-size: 0.9rem; }
-.sources p { margin: 0 0 8px; font-weight: 600; color: var(--niebla); }
-.sources ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.contact-sources { padding-bottom: 28px; }
+.sources { margin-top: clamp(64px, 8vw, 104px); color: var(--bruma); font-size: 0.78rem; line-height: 1.5; }
+.sources p { margin: 0 0 6px; font-weight: 600; color: var(--niebla); }
+.sources ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
 .sources a { color: var(--niebla); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
 
 /* Menú con más enlaces */
