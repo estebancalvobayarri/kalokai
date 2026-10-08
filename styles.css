@@ -730,7 +730,6 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; color: var(--niebla); }
 .check input { width: auto; padding: 0; flex: none; margin-top: 5px; accent-color: var(--ambar); }
 .optional { color: var(--bruma); font-weight: 400; }
-.form-status a { color: var(--claro); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
 [hidden] { display: none !important; }
 
 /* Botón flotante de WhatsApp */
