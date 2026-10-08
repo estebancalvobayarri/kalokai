@@ -323,7 +323,13 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.04em;
   margin: 0 0 12px;
 }
-.hl { color: var(--ambar); font-weight: 700; }
+.hl {
+  color: var(--ambar);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.2em;
+  letter-spacing: -0.02em;
+}
 .area-tag { color: var(--ambar); font-weight: 500; margin: 0 0 28px; }
 .area ul { list-style: none; margin: auto 0 0; padding: 0; }
 .area li {
