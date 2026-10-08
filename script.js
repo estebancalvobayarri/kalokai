@@ -62,6 +62,7 @@
   // El envío prepara un correo a DESTINO con los datos, como hasta ahora.
   // ------------------------------------------------------------------
   var DESTINO = 'hola@kalokai.es';
+  var GUIA = 'guia-formacion-bonificada-kalokai.pdf';
 
   var plantilla =
     '<dialog class="form-dialog" id="solicitud" aria-labelledby="solicitud-title">' +
@@ -123,7 +124,7 @@
     '      <label for="s-mensaje">¿Algo más que debamos saber? <span class="optional">(opcional)</span></label>' +
     '      <textarea id="s-mensaje" name="mensaje" rows="3"></textarea>' +
     '    </div>' +
-    '    <label class="check field-wide" data-solo="credito"><input type="checkbox" name="guia" checked> Enviadme también la guía de formación bonificada.</label>' +
+    '    <label class="check field-wide" data-solo="credito"><input type="checkbox" name="guia" checked> <span>Quiero descargar la guía de formación bonificada.</span></label>' +
     '    <label class="check field-wide"><input type="checkbox" id="s-acepto" name="acepto" required> <span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y acepto que Kalokai use estos datos para responder a mi solicitud.</span></label>' +
     '    <div class="field-wide form-foot">' +
     '      <button class="btn" type="submit">Enviar solicitud</button>' +
@@ -239,11 +240,30 @@
     }
     lineas.push('', d.get('mensaje') || '');
 
-    window.location.href = 'mailto:' + DESTINO +
+    var conGuia = motivo === 'credito' && d.get('guia');
+
+    // Si ha pedido la guía, se descarga al enviar
+    if (conGuia) {
+      var descarga = document.createElement('a');
+      descarga.href = GUIA;
+      descarga.download = GUIA;
+      document.body.appendChild(descarga);
+      descarga.click();
+      descarga.remove();
+    }
+
+    var mailto = 'mailto:' + DESTINO +
       '?subject=' + encodeURIComponent(asunto) +
       '&body=' + encodeURIComponent(lineas.join('\n'));
+    // Pequeña espera para que la descarga empiece antes de abrir el correo
+    setTimeout(function () { window.location.href = mailto; }, conGuia ? 600 : 0);
 
     status.classList.remove('error');
-    status.textContent = 'Hemos abierto tu correo con la solicitud preparada. Solo falta enviarla.';
+    if (conGuia) {
+      status.innerHTML = 'Se está descargando la guía y hemos abierto tu correo con la solicitud preparada. ' +
+        'Si la guía no se ha descargado, <a href="' + GUIA + '" download>descárgala aquí</a>.';
+    } else {
+      status.textContent = 'Hemos abierto tu correo con la solicitud preparada. Solo falta enviarla.';
+    }
   });
 })();
