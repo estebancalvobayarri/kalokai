@@ -8,6 +8,8 @@
   --bruma: #9AA6B8;       /* texto secundario */
   --niebla: #C9D1DD;      /* texto de lectura sobre oscuro */
   --claro: #F3F4F7;       /* texto principal y secciones claras */
+  --pizarra: #4B5768;     /* texto secundario sobre fondo claro */
+  --linea-clara: #D5DAE2; /* separadores sobre fondo claro */
   --ambar: #FFB224;       /* color de marca */
   --ambar-hover: #FFC24D;
 
@@ -298,7 +300,7 @@ p { margin: 0 0 1em; }
 
 /* Áreas */
 
-.areas { padding: var(--section) 0 0; }
+.areas { padding: var(--section) 0; }
 
 .area-grid {
   display: grid;
@@ -332,7 +334,12 @@ p { margin: 0 0 1em; }
 
 /* Método */
 
-.method { padding: var(--section) 0; }
+.method {
+  padding: var(--section) 0;
+  background: var(--claro);
+  color: var(--noche);
+}
+.method .intro { color: var(--pizarra); }
 
 .steps {
   list-style: none;
@@ -352,8 +359,8 @@ p { margin: 0 0 1em; }
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1.5px solid var(--ambar);
-  color: var(--ambar);
+  background: var(--ambar);
+  color: var(--noche);
   font-family: var(--display);
   font-weight: 800;
   font-size: 1.25rem;
@@ -367,11 +374,12 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.015em;
   margin: 0 0 10px;
 }
-.steps p { color: var(--bruma); margin: 0; font-size: 1rem; }
+.steps li { border-top: 1px solid var(--linea-clara); padding-top: 28px; }
+.steps p { color: var(--pizarra); margin: 0; font-size: 1rem; }
 
 /* Contacto */
 
-.contact { padding: 0 0 var(--section); }
+.contact { padding: var(--section) 0; }
 
 .contact-card {
   display: grid;
