@@ -380,6 +380,8 @@ p { margin: 0 0 1em; }
 /* Formación bonificada (FUNDAE) */
 
 .bonus { padding: var(--section) 0 0; }
+.bonus .section-head { margin-bottom: 0; }
+.bonus .actions { margin-top: 28px; }
 
 /* Contacto */
 
