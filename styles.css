@@ -549,15 +549,15 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--ambar);
-  color: var(--noche);
+  background: #25D366; /* verde corporativo de WhatsApp */
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.wa-float:hover { background: var(--ambar-hover); transform: translateY(-2px); }
+.wa-float:hover { background: #1EBE5B; transform: translateY(-2px); }
 .wa-float svg { width: 30px; height: 30px; fill: currentColor; }
 
 /* Pantallas medianas y pequeñas */
