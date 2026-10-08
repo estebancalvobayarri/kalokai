@@ -1,6 +1,6 @@
 # Kalokai
 
-Web de Kalokai, formación para empresas en salud, negocio y tecnología que empieza por las personas.
+Web de Kalokai, formación para empresas en bienestar: salud física, salud mental y equipo y ambiente laboral. «Bienestar para tu empresa».
 
 ## Estructura
 
