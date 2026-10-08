@@ -5,6 +5,48 @@
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (!location.hash) window.scrollTo(0, 0);
 
+  // ------------------------------------------------------------------
+  // Menú para móvil y tablet: botón en la cabecera con las tres páginas.
+  // Para cambiar los enlaces, edita la lista PAGINAS.
+  // ------------------------------------------------------------------
+  var PAGINAS = [
+    ['index.html', 'Inicio'],
+    ['bienestar-laboral.html', 'Bienestar laboral'],
+    ['formacion-bonificada.html', 'Formación bonificada']
+  ];
+  var cabecera = document.querySelector('.header-inner');
+  if (cabecera) {
+    var actual = location.pathname.split('/').pop() || 'index.html';
+    var boton = document.createElement('button');
+    boton.className = 'menu-toggle';
+    boton.type = 'button';
+    boton.setAttribute('aria-expanded', 'false');
+    boton.setAttribute('aria-controls', 'menu-movil');
+    boton.setAttribute('aria-label', 'Abrir menú');
+    boton.innerHTML = '<span></span><span></span><span></span>';
+    cabecera.appendChild(boton);
+
+    var panel = document.createElement('nav');
+    panel.className = 'mobile-menu';
+    panel.id = 'menu-movil';
+    panel.setAttribute('aria-label', 'Menú');
+    panel.hidden = true;
+    panel.innerHTML = '<ul class="wrap">' + PAGINAS.map(function (p) {
+      return '<li><a href="' + p[0] + '"' + (p[0] === actual ? ' aria-current="page"' : '') + '>' + p[1] + '</a></li>';
+    }).join('') + '</ul>';
+    cabecera.parentNode.appendChild(panel);
+
+    function abrirMenu(abierto) {
+      panel.hidden = !abierto;
+      boton.setAttribute('aria-expanded', String(abierto));
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+      boton.classList.toggle('open', abierto);
+    }
+    boton.addEventListener('click', function () { abrirMenu(panel.hidden); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') abrirMenu(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 980) abrirMenu(false); });
+  }
+
   // Línea bajo la cabecera al desplazarse
   var header = document.querySelector('.site-header');
   function onScroll() {
