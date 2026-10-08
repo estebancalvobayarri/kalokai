@@ -459,6 +459,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   color: var(--noche);
   padding-bottom: clamp(56px, 8vw, 104px);
 }
+.amber { color: var(--ambar); }
 .page-hero .lede { max-width: 38em; color: var(--pizarra); }
 .principles .hl { font-size: 1.05em; }
 .nav a[aria-current="page"] { color: var(--claro); text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 8px; }
