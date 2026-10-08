@@ -1,6 +1,10 @@
 // Kalokai — comportamiento mínimo de la página
 
 (function () {
+  // Al abrir una página sin ancla (#...), empezar siempre desde arriba
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) window.scrollTo(0, 0);
+
   // Línea bajo la cabecera al desplazarse
   var header = document.querySelector('.site-header');
   function onScroll() {
