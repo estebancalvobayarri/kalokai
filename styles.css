@@ -122,6 +122,8 @@ p { margin: 0 0 1em; }
   margin: 0;
 }
 
+.lede strong { font-weight: 600; color: var(--claro); }
+
 /* Botones y enlaces */
 
 .btn {
