@@ -539,6 +539,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .nav a { font-size: 0.925rem; }
 }
 
+/* Botón flotante de WhatsApp */
+
+.wa-float {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 15;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--ambar);
+  color: var(--noche);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.wa-float:hover { background: var(--ambar-hover); transform: translateY(-2px); }
+.wa-float svg { width: 30px; height: 30px; fill: currentColor; }
+
 /* Pantallas medianas y pequeñas */
 
 @media (max-width: 980px) {
