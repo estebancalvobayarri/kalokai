@@ -387,8 +387,8 @@ p { margin: 0 0 1em; }
 /* Formación bonificada (FUNDAE) */
 
 .bonus { padding: var(--section) 0; }
-.bonus .section-head { margin-bottom: 0; }
-.bonus .actions { margin-top: 28px; }
+.bonus-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+.bonus .h2 { max-width: 16em; }
 
 /* Contacto */
 
@@ -543,6 +543,57 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .nav { gap: 20px; }
   .nav a { font-size: 0.925rem; }
 }
+
+/* Página: formación bonificada */
+
+.page-hero .link:hover { color: var(--pizarra); }
+
+.credit-card {
+  background: var(--medianoche);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 3vw, 40px);
+}
+.credit-label { color: var(--niebla); font-weight: 500; margin: 0 0 16px; }
+.credit-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.credit-table th {
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bruma);
+  padding: 0 0 10px;
+}
+.credit-table th:last-child, .credit-table td:last-child { text-align: right; }
+.credit-table td { padding: 14px 0; border-top: 1px solid var(--linea); color: var(--niebla); }
+.credit-table td:last-child {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--ambar);
+}
+.credit-note { color: var(--bruma); font-size: 0.875rem; margin: 16px 0 0; }
+
+.faq { max-width: 52em; }
+.faq details { border-top: 1px solid var(--linea); }
+.faq details:last-child { border-bottom: 1px solid var(--linea); }
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--ambar); font-size: 1.75rem; line-height: 1; flex-shrink: 0; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { color: var(--niebla); margin: 0 0 24px; max-width: 46em; }
 
 /* Página: política de privacidad */
 
