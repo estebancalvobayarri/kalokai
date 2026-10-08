@@ -451,13 +451,110 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .footer-inner p { margin: 0; color: var(--bruma); }
 .footer-inner .small { margin-left: auto; font-size: 0.9rem; }
 
+/* Página: bienestar laboral */
+
+.page-hero { padding-bottom: clamp(24px, 4vw, 48px); }
+.page-hero .lede { max-width: 38em; }
+.principles .hl { font-size: 1.05em; }
+.nav a[aria-current="page"] { color: var(--claro); text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 8px; }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.fact {
+  background: var(--medianoche);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.fact p { margin: 0; color: var(--niebla); }
+.fact cite { font-style: normal; font-size: 0.875rem; color: var(--bruma); margin-top: auto; }
+.fact-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 1.8rem + 1.6vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ambar);
+  font-variant-numeric: tabular-nums;
+}
+.fact-label { font-size: 0.95rem; color: var(--bruma) !important; }
+.fact-big .fact-num { font-size: clamp(3rem, 2rem + 3vw, 5rem); }
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+.split-text { color: var(--bruma); font-size: 1.125rem; max-width: 34em; margin: 24px 0 0; }
+.method .split-text { color: var(--pizarra); }
+
+.rank {
+  list-style: none;
+  counter-reset: rank;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.rank li {
+  counter-increment: rank;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border: 1px solid var(--linea-clara);
+  border-radius: 999px;
+  color: var(--pizarra);
+}
+.rank li::before {
+  content: counter(rank);
+  font-family: var(--display);
+  font-weight: 800;
+  min-width: 1.4em;
+  font-variant-numeric: tabular-nums;
+}
+.rank li.top {
+  background: var(--noche);
+  border-color: var(--noche);
+  color: var(--claro);
+  font-weight: 600;
+}
+.rank li.top::before { color: var(--ambar); }
+.rank-note { color: var(--pizarra); font-size: 0.9rem; margin: 16px 0 0; }
+
+.cta-card { align-items: center; }
+.cta-card p { color: var(--niebla); margin: 0; }
+.cta-card .actions { margin-top: 28px; }
+
+.sources { margin-top: 48px; color: var(--bruma); font-size: 0.9rem; }
+.sources p { margin: 0 0 8px; font-weight: 600; color: var(--niebla); }
+.sources ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.sources a { color: var(--niebla); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
+
+/* Menú con más enlaces */
+@media (max-width: 1100px) {
+  .header-inner { gap: 24px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 0.925rem; }
+}
+
 /* Pantallas medianas y pequeñas */
 
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-art { justify-self: start; max-width: 260px; order: -1; }
   .approach-head, .section-head, .contact-card { grid-template-columns: 1fr; }
-  .principles, .area-grid { grid-template-columns: 1fr; }
+  .principles, .area-grid, .split { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .nav { display: none; }
+  .header-inner { justify-content: space-between; }
   .steps { grid-template-columns: 1fr 1fr; row-gap: 48px; }
 }
 
@@ -466,6 +563,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .header-inner { justify-content: space-between; }
   .hero-art { max-width: 180px; }
   .steps { grid-template-columns: 1fr; }
+  .facts, .rank { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .contact-card { border-radius: var(--radius-md); }
   .footer-inner .small { margin-left: 0; }

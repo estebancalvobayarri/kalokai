@@ -14,6 +14,8 @@
   var status = document.getElementById('form-status');
   var DESTINO = 'hola@kalokai.es';
 
+  if (!form) return; // páginas sin formulario
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
