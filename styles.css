@@ -331,6 +331,14 @@ p { margin: 0 0 1em; }
   color: var(--niebla);
   font-size: 0.995rem;
 }
+.area-who {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--linea);
+  color: var(--ambar);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
 
 /* Método */
 
