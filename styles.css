@@ -777,3 +777,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .footer-inner { grid-template-columns: 1fr; justify-items: start; }
   .footer-contact { justify-self: start; align-items: flex-start; }
 }
+
+/* Secciones centradas: frase central de inicio y primera sección de las páginas interiores */
+.statement-inner { align-items: center; text-align: center; }
+.page-hero .wrap { text-align: center; }
+.page-hero .display { margin-left: auto; margin-right: auto; }
+.page-hero .lede { margin-left: auto; margin-right: auto; text-wrap: balance; }
+.page-hero .actions { justify-content: center; }
