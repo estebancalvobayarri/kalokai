@@ -71,7 +71,7 @@ a { color: inherit; }
   gap: 10px;
   text-decoration: none;
 }
-.logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
+.logo-mark { width: 40px; height: 40px; flex-shrink: 0; }
 .logo-arc { fill: none; stroke: var(--claro); stroke-width: 15; stroke-linecap: round; }
 .logo-dot { fill: var(--ambar); }
 .logo-word {
