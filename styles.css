@@ -786,7 +786,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .page-hero .actions { justify-content: center; }
 
 /* Logo de FUNDAE en «Un dinero que ya es tuyo» */
-.fundae-logo { display: block; width: 100%; max-width: 300px; height: auto; margin: 36px 0 8px; }
+.fundae-logo { display: block; width: 100%; max-width: 225px; height: auto; margin: 36px 0 8px; }
 @media (max-width: 680px) {
-  .fundae-logo { max-width: 72%; margin: 32px 0 4px; }
+  .fundae-logo { max-width: 54%; margin: 32px 0 4px; }
 }
