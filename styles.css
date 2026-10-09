@@ -790,3 +790,6 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 @media (max-width: 680px) {
   .fundae-logo { max-width: 54%; margin: 32px 0 4px; }
 }
+
+/* Frase del pie: blanca, fina y en cursiva */
+.footer-inner .footer-claim { color: #fff; font-weight: 300; font-style: italic; line-height: 1.4; margin: 0; }
