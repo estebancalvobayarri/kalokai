@@ -777,6 +777,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .footer-brand { align-items: center; }
   .footer-contact { justify-self: center; align-items: center; }
+  .footer-link { margin: 16px 0; }
 }
 
 /* Secciones centradas: frase central de inicio y primera sección de las páginas interiores */
