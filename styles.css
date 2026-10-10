@@ -774,8 +774,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .facts { grid-template-columns: 1fr; }
   .form { grid-template-columns: 1fr; }
   .contact-card { border-radius: var(--radius-md); }
-  .footer-inner { grid-template-columns: 1fr; justify-items: start; }
-  .footer-contact { justify-self: start; align-items: flex-start; }
+  .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .footer-brand { align-items: center; }
+  .footer-contact { justify-self: center; align-items: center; }
 }
 
 /* Secciones centradas: frase central de inicio y primera sección de las páginas interiores */
