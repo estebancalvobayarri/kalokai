@@ -247,3 +247,191 @@
     status.textContent = 'Hemos abierto tu correo con la solicitud preparada. Solo falta enviarla.';
   });
 })();
+
+// --------------------------------------------------------------------
+// Ventana «Descargar guía FUNDAE» (solo en las páginas con [data-guia])
+// Muestra la portada de la guía y un formulario. Al enviarlo, se manda
+// la guía por correo a la dirección que indique la persona.
+// El correo lo envía EmailJS (emailjs.com) a través del correo de Hostinger
+// (hola@kalokai.es). Rellena los tres datos de GUIA_EMAILJS con los de tu
+// cuenta de EmailJS. Mientras estén vacíos, el formulario funciona en modo
+// prueba: simula el envío y no manda nada.
+// --------------------------------------------------------------------
+(function () {
+  var botones = document.querySelectorAll('[data-guia]');
+  if (!botones.length) return;
+
+  var GUIA_EMAILJS = {
+    servicio: 'service_h3id2k7',   // Service ID   (EmailJS > Email Services)
+    plantilla: 'template_aduyb6e', // Template ID  (EmailJS > Email Templates)
+    clave: 'PG7-iolgKOd9WyDpg'     // Public Key   (EmailJS > Account)
+  };
+  // Enlace a la guía que se incluye en el correo
+  var GUIA_PDF = 'https://www.kalokai.es/guia-formacion-bonificada-kalokai.pdf';
+
+  var plantilla =
+    '<dialog class="form-dialog guia-dialog" id="guia" aria-labelledby="guia-title">' +
+    '  <button class="dialog-close" type="button" aria-label="Cerrar">&times;</button>' +
+    '  <div class="guia-grid">' +
+    '    <div class="guia-cover">' +
+    '      <img src="guia-portada.jpg" width="640" height="905" alt="Portada de la Guía de la formación bonificada de Kalokai">' +
+    '    </div>' +
+    '    <div class="guia-body">' +
+    '      <h2 id="guia-title" class="dialog-title">Guía de la formación bonificada</h2>' +
+    '      <p class="dialog-intro">Cómo usar el crédito FUNDAE de tu empresa para cuidar a tu equipo, explicado de forma sencilla. Déjanos tus datos y te la enviamos por correo.</p>' +
+    '      <form class="form guia-form" id="guia-form" novalidate>' +
+    '        <div class="field">' +
+    '          <label for="g-nombre">Nombre</label>' +
+    '          <input id="g-nombre" name="nombre" type="text" autocomplete="name" required>' +
+    '        </div>' +
+    '        <div class="field">' +
+    '          <label for="g-empresa">Empresa</label>' +
+    '          <input id="g-empresa" name="empresa" type="text" autocomplete="organization" required>' +
+    '        </div>' +
+    '        <div class="field field-wide">' +
+    '          <label for="g-email">Correo electrónico</label>' +
+    '          <input id="g-email" name="email" type="email" autocomplete="email" required>' +
+    '        </div>' +
+    '        <div class="field field-wide">' +
+    '          <label for="g-plantilla">Personas en la empresa</label>' +
+    '          <select id="g-plantilla" name="plantilla">' +
+    '            <option>1 a 5</option><option>6 a 9</option><option>10 a 49</option>' +
+    '            <option>50 a 249</option><option>250 o más</option>' +
+    '          </select>' +
+    '        </div>' +
+    '        <div class="guia-trampa" aria-hidden="true"><label for="g-web">Web</label><input id="g-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>' +
+    '        <label class="check field-wide"><input type="checkbox" id="g-acepto" name="acepto" required> <span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y acepto que Kalokai use estos datos para enviarme la guía.</span></label>' +
+    '        <div class="field-wide form-foot">' +
+    '          <button class="btn" type="submit">Solicitar guía</button>' +
+    '          <p class="form-status" id="guia-status" role="status" aria-live="polite"></p>' +
+    '        </div>' +
+    '      </form>' +
+    '      <div class="guia-ok" id="guia-ok" hidden>' +
+    '        <svg class="guia-ok-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>' +
+    '        <p class="guia-ok-title">¡Guía en camino!</p>' +
+    '        <p class="guia-ok-text">Te la hemos enviado a <strong id="guia-ok-email"></strong>. Si en unos minutos no la ves, revisa la carpeta de correo no deseado.</p>' +
+    '      </div>' +
+    '    </div>' +
+    '  </div>' +
+    '</dialog>';
+
+  document.body.insertAdjacentHTML('beforeend', plantilla);
+
+  var dialog = document.getElementById('guia');
+  var form = document.getElementById('guia-form');
+  var status = document.getElementById('guia-status');
+  var ok = document.getElementById('guia-ok');
+  var enviar = form.querySelector('button[type="submit"]');
+  var envios = 0;          // envíos hechos en esta visita
+  var MAX_ENVIOS = 3;      // límite por visita para evitar abusos
+
+  function abrir() {
+    form.hidden = false;
+    ok.hidden = true;
+    status.textContent = '';
+    status.classList.remove('error');
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+    document.getElementById('g-nombre').focus();
+  }
+
+  function cerrar() {
+    if (typeof dialog.close === 'function') dialog.close();
+    else dialog.removeAttribute('open');
+  }
+
+  botones.forEach(function (el) {
+    el.addEventListener('click', function (event) {
+      event.preventDefault();
+      abrir();
+    });
+  });
+  dialog.querySelector('.dialog-close').addEventListener('click', cerrar);
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) cerrar();
+  });
+  if (location.hash === '#guia') abrir();
+
+  // Envía el correo con EmailJS. Sin datos configurados, simula el envío.
+  function enviarGuia(datos) {
+    var c = GUIA_EMAILJS;
+    if (!c.servicio || !c.plantilla || !c.clave) {
+      return new Promise(function (resolve) { setTimeout(resolve, 700); });
+    }
+    datos.enlace_guia = GUIA_PDF;
+    return fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: c.servicio,
+        template_id: c.plantilla,
+        user_id: c.clave,
+        template_params: datos
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error('Envío fallido');
+    });
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var faltan = [];
+    ['g-nombre', 'g-empresa', 'g-email'].forEach(function (id) {
+      var input = document.getElementById(id);
+      var valido = input.value.trim() !== '' && input.checkValidity();
+      input.parentElement.classList.toggle('invalid', !valido);
+      input.setAttribute('aria-invalid', String(!valido));
+      if (!valido) faltan.push(input);
+    });
+    var acepto = document.getElementById('g-acepto');
+
+    if (faltan.length || !acepto.checked) {
+      status.textContent = faltan.length
+        ? 'Revisa los campos marcados para poder enviarte la guía.'
+        : 'Marca la casilla de aceptación para poder enviarte la guía.';
+      status.classList.add('error');
+      (faltan[0] || acepto).focus();
+      return;
+    }
+
+    var d = new FormData(form);
+
+    // Protección contra robots: el campo «web» está oculto y solo lo rellenan ellos.
+    // También se limita el número de envíos por visita.
+    var esRobot = (d.get('web') || '').trim() !== '';
+    if (esRobot || envios >= MAX_ENVIOS) {
+      status.textContent = esRobot ? '' : 'Ya hemos enviado la guía. Si no te ha llegado, escríbenos a hola@kalokai.es.';
+      status.classList.toggle('error', !esRobot);
+      if (esRobot) { form.hidden = true; ok.hidden = false; }
+      return;
+    }
+
+    var datos = {
+      nombre: d.get('nombre').trim(),
+      empresa: d.get('empresa').trim(),
+      email: d.get('email').trim(),
+      plantilla: d.get('plantilla'),
+      pagina: location.href
+    };
+
+    enviar.disabled = true;
+    enviar.textContent = 'Enviando…';
+    status.classList.remove('error');
+    status.textContent = '';
+
+    enviarGuia(datos).then(function () {
+      envios++;
+      document.getElementById('guia-ok-email').textContent = datos.email;
+      form.hidden = true;
+      ok.hidden = false;
+      form.reset();
+    }).catch(function () {
+      status.textContent = 'No hemos podido enviar la guía. Inténtalo de nuevo o escríbenos a hola@kalokai.es.';
+      status.classList.add('error');
+    }).then(function () {
+      enviar.disabled = false;
+      enviar.textContent = 'Solicitar guía';
+    });
+  });
+})();
