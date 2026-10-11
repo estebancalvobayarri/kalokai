@@ -129,6 +129,7 @@
     '      <button class="btn" type="submit">Enviar solicitud</button>' +
     '      <p class="form-status" id="solicitud-status" role="status" aria-live="polite"></p>' +
     '    </div>' +
+    '<p class="form-legal field-wide"><strong>Responsable:</strong> Esteban Calvo Bayarri (Kalokai). <strong>Finalidad:</strong> responder a tu solicitud y, si nos lo pides, consultar el crédito FUNDAE de tu empresa y enviarte la guía. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no cedemos tus datos a terceros, salvo obligación legal. <strong>Derechos:</strong> acceso, rectificación, supresión y demás, en hola@kalokai.es. Más información en la <a href="privacidad.html" target="_blank">política de privacidad</a>.</p>' +
     '  </form>' +
     '</dialog>';
 
@@ -305,6 +306,7 @@
     '          <button class="btn" type="submit">Solicitar guía</button>' +
     '          <p class="form-status" id="guia-status" role="status" aria-live="polite"></p>' +
     '        </div>' +
+            '<p class="form-legal field-wide"><strong>Responsable:</strong> Esteban Calvo Bayarri (Kalokai). <strong>Finalidad:</strong> enviarte la guía de formación bonificada y, si lo solicitas, información sobre nuestras formaciones. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no cedemos tus datos a terceros, salvo obligación legal. <strong>Derechos:</strong> acceso, rectificación, supresión y demás, en hola@kalokai.es. Más información en la <a href="privacidad.html" target="_blank">política de privacidad</a>.</p>' +
     '      </form>' +
     '      <div class="guia-ok" id="guia-ok" hidden>' +
     '        <svg class="guia-ok-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>' +
