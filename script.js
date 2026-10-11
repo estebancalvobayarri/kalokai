@@ -252,14 +252,22 @@
 // Ventana «Descargar guía FUNDAE» (solo en las páginas con [data-guia])
 // Muestra la portada de la guía y un formulario. Al enviarlo, se manda
 // la guía por correo a la dirección que indique la persona.
-// GUIA_ENVIO: dirección del servicio que envía el correo. Mientras esté
-// vacía, el formulario funciona en modo prueba (simula el envío).
+// El correo lo envía EmailJS (emailjs.com) a través del correo de Hostinger
+// (hola@kalokai.es). Rellena los tres datos de GUIA_EMAILJS con los de tu
+// cuenta de EmailJS. Mientras estén vacíos, el formulario funciona en modo
+// prueba: simula el envío y no manda nada.
 // --------------------------------------------------------------------
 (function () {
   var botones = document.querySelectorAll('[data-guia]');
   if (!botones.length) return;
 
-  var GUIA_ENVIO = '';
+  var GUIA_EMAILJS = {
+    servicio: '',   // Service ID   (EmailJS > Email Services)
+    plantilla: '',  // Template ID  (EmailJS > Email Templates)
+    clave: ''       // Public Key   (EmailJS > Account)
+  };
+  // Enlace a la guía que se incluye en el correo
+  var GUIA_PDF = 'https://www.kalokai.es/guia-formacion-bonificada-kalokai.pdf';
 
   var plantilla =
     '<dialog class="form-dialog guia-dialog" id="guia" aria-labelledby="guia-title">' +
@@ -341,20 +349,24 @@
   });
   if (location.hash === '#guia') abrir();
 
-  // Envía los datos al servicio de correo. Sin servicio configurado, simula el envío.
+  // Envía el correo con EmailJS. Sin datos configurados, simula el envío.
   function enviarGuia(datos) {
-    if (!GUIA_ENVIO) {
+    var c = GUIA_EMAILJS;
+    if (!c.servicio || !c.plantilla || !c.clave) {
       return new Promise(function (resolve) { setTimeout(resolve, 700); });
     }
-    return fetch(GUIA_ENVIO, {
+    datos.enlace_guia = GUIA_PDF;
+    return fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(datos)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: c.servicio,
+        template_id: c.plantilla,
+        user_id: c.clave,
+        template_params: datos
+      })
     }).then(function (r) {
       if (!r.ok) throw new Error('Envío fallido');
-      return r.json().catch(function () { return {}; });
-    }).then(function (res) {
-      if (res && res.ok === false) throw new Error(res.error || 'Envío fallido');
     });
   }
 
