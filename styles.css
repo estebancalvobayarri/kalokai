@@ -625,6 +625,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .legal ul { margin: 0 0 1em; padding-left: 1.2em; display: grid; gap: 6px; }
 .legal a, .check a { color: var(--claro); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
 
+.footer-links { display: flex; flex-direction: column; align-items: center; }
 .footer-link { color: var(--bruma); font-size: 0.9rem; text-decoration: none; }
 .footer-link:hover, .footer-link[aria-current="page"] { color: var(--claro); }
 
@@ -777,7 +778,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .footer-brand { align-items: center; }
   .footer-contact { justify-self: center; align-items: center; }
-  .footer-link { margin: 16px 0; }
+  .footer-links { margin: 16px 0; }
 }
 
 /* Secciones centradas: frase central de inicio y primera sección de las páginas interiores */
