@@ -13,6 +13,6 @@ Cada diseño está en dos formatos:
 - **SVG**: vectorial, se puede ampliar sin perder calidad. Es el formato recomendado para la web y para imprenta.
 - **PNG**: imagen con fondo transparente para usar en documentos, presentaciones y correos.
 
-La palabra está convertida a trazos, así que se ve igual aunque el ordenador no tenga instalada la tipografía (Bricolage Grotesque).
+La palabra está en Bricolage Grotesque, con grosor 800 (ExtraBold), tamaño óptico de 92 y espaciado entre letras de −0,045 em, igual que en la propuesta. Está convertida a trazos, así que se ve igual aunque el ordenador no tenga instalada la tipografía.
 
 El punto siempre va en ámbar Kalokai, `#FFB224`.
