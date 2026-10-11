@@ -845,3 +845,5 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .guia-body { padding-top: 24px; }
   .guia-form { grid-template-columns: 1fr; }
 }
+/* Campo trampa para robots: fuera de la vista de las personas */
+.guia-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

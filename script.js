@@ -262,9 +262,9 @@
   if (!botones.length) return;
 
   var GUIA_EMAILJS = {
-    servicio: '',   // Service ID   (EmailJS > Email Services)
-    plantilla: '',  // Template ID  (EmailJS > Email Templates)
-    clave: ''       // Public Key   (EmailJS > Account)
+    servicio: 'service_h3id2k7',   // Service ID   (EmailJS > Email Services)
+    plantilla: 'template_aduyb6e', // Template ID  (EmailJS > Email Templates)
+    clave: 'PG7-iolgKOd9WyDpg'     // Public Key   (EmailJS > Account)
   };
   // Enlace a la guía que se incluye en el correo
   var GUIA_PDF = 'https://www.kalokai.es/guia-formacion-bonificada-kalokai.pdf';
@@ -299,6 +299,7 @@
     '            <option>50 a 249</option><option>250 o más</option>' +
     '          </select>' +
     '        </div>' +
+    '        <div class="guia-trampa" aria-hidden="true"><label for="g-web">Web</label><input id="g-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>' +
     '        <label class="check field-wide"><input type="checkbox" id="g-acepto" name="acepto" required> <span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y acepto que Kalokai use estos datos para enviarme la guía.</span></label>' +
     '        <div class="field-wide form-foot">' +
     '          <button class="btn" type="submit">Solicitar guía</button>' +
@@ -321,6 +322,8 @@
   var status = document.getElementById('guia-status');
   var ok = document.getElementById('guia-ok');
   var enviar = form.querySelector('button[type="submit"]');
+  var envios = 0;          // envíos hechos en esta visita
+  var MAX_ENVIOS = 3;      // límite por visita para evitar abusos
 
   function abrir() {
     form.hidden = false;
@@ -393,6 +396,17 @@
     }
 
     var d = new FormData(form);
+
+    // Protección contra robots: el campo «web» está oculto y solo lo rellenan ellos.
+    // También se limita el número de envíos por visita.
+    var esRobot = (d.get('web') || '').trim() !== '';
+    if (esRobot || envios >= MAX_ENVIOS) {
+      status.textContent = esRobot ? '' : 'Ya hemos enviado la guía. Si no te ha llegado, escríbenos a hola@kalokai.es.';
+      status.classList.toggle('error', !esRobot);
+      if (esRobot) { form.hidden = true; ok.hidden = false; }
+      return;
+    }
+
     var datos = {
       nombre: d.get('nombre').trim(),
       empresa: d.get('empresa').trim(),
@@ -407,6 +421,7 @@
     status.textContent = '';
 
     enviarGuia(datos).then(function () {
+      envios++;
       document.getElementById('guia-ok-email').textContent = datos.email;
       form.hidden = true;
       ok.hidden = false;
