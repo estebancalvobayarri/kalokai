@@ -1020,3 +1020,20 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .temario-mas summary:hover { color: var(--ambar); }
 .temario-mas summary:focus-visible { outline: 2px solid var(--ambar); outline-offset: 4px; border-radius: 4px; }
 .temario-mas ul { margin: 12px 0 0; }
+
+
+/* ------------------------------------------------------------------
+   Cabecera en blanco con el logo para fondo claro
+   ------------------------------------------------------------------ */
+.site-header { background: #FFFFFF; backdrop-filter: none; border-bottom: 1px solid var(--linea-clara); }
+.site-header.scrolled { border-bottom-color: var(--linea-clara); }
+.logo-img img { display: block; height: 34px; width: auto; }
+.site-header .nav a { color: var(--pizarra); }
+.site-header .nav a:hover,
+.site-header .nav a[aria-current="page"] { color: var(--noche); }
+.site-header .menu-toggle { border-color: var(--linea-clara); }
+.site-header .menu-toggle span { background: var(--noche); }
+.mobile-menu { background: #FFFFFF; border-top-color: var(--linea-clara); }
+.mobile-menu li { border-bottom-color: var(--linea-clara); }
+.mobile-menu a { color: var(--pizarra); }
+.mobile-menu a:hover, .mobile-menu a[aria-current="page"] { color: var(--noche); }
