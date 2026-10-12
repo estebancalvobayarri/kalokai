@@ -852,3 +852,85 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 }
 /* Campo trampa para robots: fuera de la vista de las personas */
 .guia-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+
+/* ------------------------------------------------------------------
+   Páginas legales (política de privacidad y aviso legal)
+   Diseño sobrio: fondo blanco, texto negro, una sola tipografía.
+   Los títulos solo se distinguen por tamaño y peso.
+   ------------------------------------------------------------------ */
+.legal-page {
+  --legal-negro: #111111;
+  --legal-gris: #555555;
+  --legal-linea: #DDDDDD;
+  background: #FFFFFF;
+  color: var(--legal-negro);
+}
+.legal-page :focus-visible { outline-color: var(--legal-negro); }
+
+/* Cabecera */
+.legal-page .site-header { background: #FFFFFF; backdrop-filter: none; border-bottom: 1px solid var(--legal-linea); }
+.legal-page .site-header.scrolled { border-bottom-color: var(--legal-linea); }
+.legal-page .logo-word { color: var(--legal-negro); }
+.legal-page .logo-arc { stroke: var(--legal-negro); }
+.legal-page .logo-dot { fill: var(--legal-negro); }
+.legal-page .nav a { color: var(--legal-gris); }
+.legal-page .nav a:hover { color: var(--legal-negro); }
+.legal-page .btn { background: var(--legal-negro); color: #FFFFFF; }
+.legal-page .btn:hover { background: #333333; }
+.legal-page .menu-toggle { border-color: var(--legal-linea); }
+.legal-page .menu-toggle span { background: var(--legal-negro); }
+.legal-page .mobile-menu { background: #FFFFFF; border-top-color: var(--legal-linea); }
+.legal-page .mobile-menu li { border-bottom-color: var(--legal-linea); }
+.legal-page .mobile-menu a { font-family: var(--text); color: var(--legal-gris); }
+.legal-page .mobile-menu a:hover { color: var(--legal-negro); }
+
+/* Título de la página */
+.legal-page .page-hero { background: #FFFFFF; color: var(--legal-negro); padding: clamp(48px, 7vw, 88px) 0 0; }
+.legal-page .page-hero .wrap { text-align: left; }
+.legal-page .page-hero .display {
+  font-family: var(--text);
+  font-weight: 700;
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-left: 0;
+}
+.legal-page .page-hero .lede {
+  margin: 16px 0 0;
+  max-width: 46em;
+  font-size: 1rem;
+  color: var(--legal-gris);
+  text-wrap: pretty;
+}
+
+/* Texto legal */
+.legal-page .legal-section { padding: 40px 0 96px; }
+.legal-page .legal h2 {
+  font-family: var(--text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  margin: 40px 0 12px;
+  color: var(--legal-negro);
+}
+.legal-page .legal h2:first-child { margin-top: 0; }
+.legal-page .legal h3 { font-family: var(--text); font-weight: 600; font-size: 1.05rem; color: var(--legal-negro); }
+.legal-page .legal p,
+.legal-page .legal li { color: var(--legal-negro); font-size: 1rem; line-height: 1.65; }
+.legal-page .legal strong { color: var(--legal-negro); font-weight: 600; }
+.legal-page .legal a { color: var(--legal-negro); text-decoration: underline; text-decoration-color: currentColor; text-decoration-thickness: 1px; }
+
+/* Pie */
+.legal-page .site-footer { background: #FFFFFF; border-top-color: var(--legal-linea); }
+.legal-page .footer-inner p,
+.legal-page .footer-inner .footer-claim { color: var(--legal-gris); }
+.legal-page .footer-link,
+.legal-page .footer-mail { color: var(--legal-gris); }
+.legal-page .footer-link:hover,
+.legal-page .footer-mail:hover,
+.legal-page .footer-link[aria-current="page"] { color: var(--legal-negro); }
+
+/* Botón de WhatsApp en blanco y negro */
+.legal-page .wa-float { background: var(--legal-negro); color: #FFFFFF; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); }
+.legal-page .wa-float:hover { background: #333333; }
