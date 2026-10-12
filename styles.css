@@ -360,6 +360,14 @@ p { margin: 0 0 1em; }
 .area-extra li { display: flex; flex-direction: column; gap: 6px; padding: 16px 0 0; }
 .area-extra li strong { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--claro); }
 .area-extra li span { color: var(--niebla); font-size: 0.95rem; line-height: 1.5; }
+/* Fondo Bruma para marcarlo como un extra; textos oscuros para que se lean bien */
+.area.area-extra { background: var(--bruma); color: var(--noche); }
+.area-extra h3 { color: var(--noche); }
+.area-extra .area-extra-eyebrow { color: var(--medianoche); }
+.area-extra .area-tag { color: var(--noche); font-weight: 600; }
+.area-extra li { border-top-color: rgba(14, 23, 38, 0.25); }
+.area-extra li strong { color: var(--noche); }
+.area-extra li span { color: var(--medianoche); }
 @media (max-width: 980px) {
   .area-extra, .area-extra ul { grid-template-columns: 1fr; }
 }
