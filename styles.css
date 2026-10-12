@@ -998,3 +998,29 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .area-extra-list li span { font-size: 0.875rem; line-height: 1.35; }
   .area-extra { row-gap: 16px; }
 }
+
+/* Temario de primeros auxilios: bloques 2 a 5 plegados hasta el subtítulo */
+/* Cada tarjeta crece sola al abrirla; script.js iguala la altura de los títulos de cada fila
+   para que, cerradas, las dos tarjetas midan lo mismo */
+.temario { align-items: start; }
+.temario .area-tag { margin-bottom: 20px; }
+.temario-mas { border-top: 1px solid var(--linea); }
+.temario-mas summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 0;
+  font-weight: 600;
+  color: var(--claro);
+}
+.temario-mas summary::-webkit-details-marker { display: none; }
+.temario-mas summary::after { content: "+"; color: var(--ambar); font-size: 1.6rem; line-height: 1; }
+.temario-mas[open] summary { font-size: 0; }
+.temario-mas[open] summary::before { content: "Ocultar contenidos"; font-size: 1rem; }
+.temario-mas[open] summary::after { content: "−"; }
+.temario-mas summary:hover { color: var(--ambar); }
+.temario-mas summary:focus-visible { outline: 2px solid var(--ambar); outline-offset: 4px; border-radius: 4px; }
+.temario-mas ul { margin: 12px 0 0; }

@@ -439,3 +439,31 @@
     });
   });
 })();
+
+// --------------------------------------------------------------------
+// Temario de primeros auxilios: iguala la altura de los títulos de las
+// tarjetas que comparten fila, para que plegadas midan lo mismo.
+// --------------------------------------------------------------------
+(function () {
+  var tarjetas = document.querySelectorAll('.temario > .area');
+  if (!tarjetas.length) return;
+  function igualar() {
+    var titulos = [];
+    tarjetas.forEach(function (t) {
+      var h = t.querySelector('h3');
+      h.style.minHeight = '';
+      titulos.push({ h: h, fila: t.offsetTop });
+    });
+    var filas = {};
+    titulos.forEach(function (x) { (filas[x.fila] = filas[x.fila] || []).push(x.h); });
+    Object.keys(filas).forEach(function (k) {
+      var fila = filas[k];
+      if (fila.length < 2) return;
+      var alto = Math.max.apply(null, fila.map(function (h) { return h.offsetHeight; }));
+      fila.forEach(function (h) { h.style.minHeight = alto + 'px'; });
+    });
+  }
+  igualar();
+  window.addEventListener('resize', igualar);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(igualar);
+})();
