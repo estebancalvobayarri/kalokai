@@ -1047,3 +1047,6 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .faq-section .faq details:last-child { border-bottom-color: var(--linea-clara); }
 .faq-section .faq summary { color: var(--noche); }
 .faq-section .faq details p { color: var(--pizarra); }
+
+/* Primeros auxilios: sección de contacto sobre fondo claro */
+.contact-light { background: var(--claro); }
