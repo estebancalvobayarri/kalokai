@@ -965,22 +965,19 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .area-extra-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .area-extra-link:focus-visible { outline: none; }
 .area-extra:has(.area-extra-link:focus-visible) { outline: 2px solid var(--ambar); outline-offset: 3px; }
-/* Bloque 1 del temario (PAS): a todo el ancho y algo más claro, como base de los demás */
-.area.temario-base {
-  background: #2B3A5A;
-  margin-bottom: 16px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  gap: 24px clamp(32px, 5vw, 72px);
-  align-items: center;
-}
-.temario-base .area-tag { margin: 0; }
-.temario-base ul { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 40px); }
-.temario-base li { display: flex; flex-direction: column; gap: 4px; border-top-color: #3A4A6B; }
+/* Bloque 1 del temario (PAS): a todo el ancho; título arriba y los cuatro pasos debajo */
+.area.temario-base { margin-bottom: 16px; }
+.temario-base .area-tag { margin: 0 0 20px; }
+.temario-base ul { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 40px); }
+.temario-base li { display: flex; flex-direction: column; gap: 6px; padding: 16px 0 0; }
 .temario-base li strong { font-family: var(--display); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--claro); }
 .temario-base li span { color: var(--niebla); font-size: 0.95rem; line-height: 1.5; }
 @media (max-width: 980px) {
-  .area.temario-base, .temario-base ul { grid-template-columns: 1fr; }
+  .temario-base ul { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+}
+@media (max-width: 560px) {
+  .temario-base ul { grid-template-columns: 1fr; row-gap: 4px; }
+}
 }
 
 /* Bloque de primeros auxilios en inicio: los cinco bloques del temario, título y subtítulo en ámbar */
@@ -998,3 +995,29 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .area-extra-list li span { font-size: 0.875rem; line-height: 1.35; }
   .area-extra { row-gap: 16px; }
 }
+
+/* Temario de primeros auxilios: bloques 2 a 5 plegados hasta el subtítulo */
+/* Cada tarjeta crece sola al abrirla; script.js iguala la altura de los títulos de cada fila
+   para que, cerradas, las dos tarjetas midan lo mismo */
+.temario { align-items: start; }
+.temario .area-tag { margin-bottom: 20px; }
+.temario-mas { border-top: 1px solid var(--linea); }
+.temario-mas summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 0;
+  font-weight: 600;
+  color: var(--claro);
+}
+.temario-mas summary::-webkit-details-marker { display: none; }
+.temario-mas summary::after { content: "+"; color: var(--ambar); font-size: 1.6rem; line-height: 1; }
+.temario-mas[open] summary { font-size: 0; }
+.temario-mas[open] summary::before { content: "Ocultar contenidos"; font-size: 1rem; }
+.temario-mas[open] summary::after { content: "−"; }
+.temario-mas summary:hover { color: var(--ambar); }
+.temario-mas summary:focus-visible { outline: 2px solid var(--ambar); outline-offset: 4px; border-radius: 4px; }
+.temario-mas ul { margin: 12px 0 0; }
