@@ -336,7 +336,7 @@ p { margin: 0 0 1em; }
 
 /* Bloque horizontal de primeros auxilios bajo las tres áreas */
 .area-extra {
-  margin-top: 16px;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 24px clamp(32px, 5vw, 72px);
@@ -960,7 +960,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 /* Inicio: el bloque de primeros auxilios es un enlace a su página */
 .area-extra { position: relative; transition: background-color 0.2s ease; }
 .area.area-extra:hover { background: #33446A; }
-.area-extra-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 50px; color: var(--claro); font-weight: 600; text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.area-extra-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--claro); font-weight: 600; text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .area-extra-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .area-extra-link:focus-visible { outline: none; }
 .area-extra:has(.area-extra-link:focus-visible) { outline: 2px solid var(--ambar); outline-offset: 3px; }
