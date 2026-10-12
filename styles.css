@@ -982,3 +982,19 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 @media (max-width: 980px) {
   .area.temario-base, .temario-base ul { grid-template-columns: 1fr; }
 }
+
+/* Bloque de primeros auxilios en inicio: los cinco bloques del temario, título y subtítulo en ámbar */
+.area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
+.area-extra-list li { gap: 4px; }
+.area-extra-list li strong { font-size: 1.05rem; line-height: 1.25; }
+.area-extra-list li span { color: var(--bruma); font-weight: 500; font-size: 0.9rem; line-height: 1.4; }
+@media (max-width: 980px) {
+  .area-extra ul.area-extra-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .area-extra ul.area-extra-list { grid-template-columns: 1fr; row-gap: 0; }
+  .area-extra-list li { padding: 9px 0 8px; gap: 2px; }
+  .area-extra-list li strong { font-size: 1rem; }
+  .area-extra-list li span { font-size: 0.875rem; line-height: 1.35; }
+  .area-extra { row-gap: 16px; }
+}
