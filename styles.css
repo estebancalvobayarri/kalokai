@@ -967,7 +967,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .area-extra:has(.area-extra-link:focus-visible) { outline: 2px solid var(--ambar); outline-offset: 3px; }
 /* Bloque 1 del temario (PAS): a todo el ancho; título arriba y los cuatro pasos debajo */
 .area.temario-base { margin-bottom: 16px; }
-.temario-base .area-tag { margin: 0 0 28px; }
+.temario-base .area-tag { margin: 0 0 20px; }
 .temario-base ul { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 40px); }
 .temario-base li { display: flex; flex-direction: column; gap: 6px; padding: 16px 0 0; }
 .temario-base li strong { font-family: var(--display); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--claro); }
