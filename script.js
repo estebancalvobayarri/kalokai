@@ -108,7 +108,7 @@
     '      <label for="s-area">Área de interés</label>' +
     '      <select id="s-area" name="area">' +
     '        <option>Aún no lo tengo claro</option><option>Salud física</option><option>Salud mental</option>' +
-    '        <option>Equipo y ambiente</option><option>Varias áreas</option>' +
+    '        <option>Equipo y ambiente</option><option>Primeros auxilios</option><option>Varias áreas</option>' +
     '      </select>' +
     '    </div>' +
     '    <fieldset class="field field-wide" data-solo="formacion">' +
@@ -157,11 +157,13 @@
     r.addEventListener('change', actualizarCampos);
   });
 
-  function abrir(motivo) {
+  function abrir(motivo, area) {
     if (motivo) {
       var radio = form.querySelector('input[name="motivo"][value="' + motivo + '"]');
       if (radio) radio.checked = true;
     }
+    // data-area="…" deja elegida esa área de interés (por ejemplo, desde la página de primeros auxilios)
+    if (area) document.getElementById('s-area').value = area;
     actualizarCampos();
     status.textContent = '';
     status.classList.remove('error');
@@ -178,7 +180,7 @@
   document.querySelectorAll('[data-solicitud]').forEach(function (el) {
     el.addEventListener('click', function (event) {
       event.preventDefault();
-      abrir(el.getAttribute('data-solicitud'));
+      abrir(el.getAttribute('data-solicitud'), el.getAttribute('data-area'));
     });
   });
 
