@@ -987,7 +987,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
 .area-extra-list li { gap: 4px; }
 .area-extra-list li strong { font-size: 1.05rem; line-height: 1.25; }
-.area-extra-list li span { color: var(--ambar); font-weight: 500; font-size: 0.9rem; line-height: 1.4; }
+.area-extra-list li span { color: var(--bruma); font-weight: 500; font-size: 0.9rem; line-height: 1.4; }
 @media (max-width: 980px) {
   .area-extra ul.area-extra-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
