@@ -12,6 +12,7 @@
   var PAGINAS = [
     ['index.html', 'Inicio'],
     ['bienestar-laboral.html', 'Bienestar laboral'],
+    ['primeros-auxilios.html', 'Primeros auxilios'],
     ['formacion-bonificada.html', 'Formación bonificada']
   ];
   var cabecera = document.querySelector('.header-inner');
