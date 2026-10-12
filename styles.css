@@ -333,6 +333,36 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.02em;
 }
 .area-tag { color: var(--ambar); font-weight: 500; margin: 0 0 28px; }
+
+/* Bloque horizontal de primeros auxilios bajo las tres áreas */
+.area-extra {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 24px clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.area-extra-eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bruma);
+}
+.area-extra .area-tag { margin: 0; }
+.area-extra ul {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(24px, 3vw, 40px);
+}
+.area-extra li { display: flex; flex-direction: column; gap: 6px; padding: 16px 0 0; }
+.area-extra li strong { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--claro); }
+.area-extra li span { color: var(--niebla); font-size: 0.95rem; line-height: 1.5; }
+@media (max-width: 980px) {
+  .area-extra, .area-extra ul { grid-template-columns: 1fr; }
+}
 .area ul { list-style: none; margin: auto 0 0; padding: 0; }
 .area li {
   padding: 12px 0;
