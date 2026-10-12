@@ -980,7 +980,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 }
 
 /* Bloque de primeros auxilios en inicio: los cinco bloques del temario, título y subtítulo en ámbar */
-.area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
+.area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 20px; }
 .area-extra-list li { gap: 4px; }
 .area-extra-list li strong { font-size: 1.05rem; line-height: 1.25; }
 .area-extra-list li span { color: var(--bruma); font-weight: 500; font-size: 0.9rem; line-height: 1.4; }
