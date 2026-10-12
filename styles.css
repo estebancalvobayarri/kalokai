@@ -960,7 +960,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 /* Inicio: el bloque de primeros auxilios es un enlace a su página */
 .area-extra { position: relative; transition: background-color 0.2s ease; }
 .area.area-extra:hover { background: #33446A; }
-.area-extra-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--claro); font-weight: 600; text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.area-extra-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 50px; color: var(--claro); font-weight: 600; text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .area-extra-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .area-extra-link:focus-visible { outline: none; }
 .area-extra:has(.area-extra-link:focus-visible) { outline: 2px solid var(--ambar); outline-offset: 3px; }
@@ -980,7 +980,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 }
 
 /* Bloque de primeros auxilios en inicio: los cinco bloques del temario, título y subtítulo en ámbar */
-.area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 50px; }
+.area-extra ul.area-extra-list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; }
 .area-extra-list li { gap: 4px; }
 .area-extra-list li strong { font-size: 1.05rem; line-height: 1.25; }
 .area-extra-list li span { color: var(--bruma); font-weight: 500; font-size: 0.9rem; line-height: 1.4; }
