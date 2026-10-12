@@ -336,7 +336,7 @@ p { margin: 0 0 1em; }
 
 /* Bloque horizontal de primeros auxilios bajo las tres áreas */
 .area-extra {
-  margin-top: 32px;
+  margin-top: 48px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 24px clamp(32px, 5vw, 72px);
