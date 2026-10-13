@@ -1035,3 +1035,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 /* Primeros auxilios: sección de contacto sobre fondo claro */
 .contact-light { background: var(--claro); }
+
+/* Enlaces a la política de privacidad en los formularios: sin subrayado */
+.check a,
+.form-legal a { text-decoration: none; }
+.check a:hover,
+.form-legal a:hover { color: var(--ambar); }
