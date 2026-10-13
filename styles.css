@@ -1041,3 +1041,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .form-legal a { text-decoration: none; }
 .check a:hover,
 .form-legal a:hover { color: var(--ambar); }
+
+/* Aviso de protección de datos: todo el texto igual, sin destacados */
+.form-legal strong { font-weight: inherit; color: inherit; }
+.form-legal a { color: inherit; }
