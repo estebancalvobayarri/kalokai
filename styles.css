@@ -470,7 +470,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .form-status { margin: 0; font-size: 0.95rem; color: var(--niebla); }
 .form-status.error { color: #FF8A7A; }
 /* Información básica de protección de datos bajo los formularios */
-.form-legal { margin: 0; font-size: 0.78rem; line-height: 1.5; color: var(--bruma); }
+.form-legal { margin: 0; font-size: 0.72rem; line-height: 1.4; color: var(--bruma); }
 .form-legal strong { font-weight: 600; color: var(--niebla); }
 .form-legal a { color: var(--niebla); text-decoration-color: var(--ambar); text-underline-offset: 3px; }
 
