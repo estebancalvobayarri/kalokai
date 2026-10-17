@@ -1047,8 +1047,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .form-legal strong { font-weight: inherit; color: inherit; }
 .form-legal a { color: inherit; }
 
-/* LinkedIn en el pie, junto al correo */
-.footer-social { display: flex; align-items: center; gap: 14px; }
-.footer-linkedin { display: inline-flex; color: var(--bruma); transition: color 0.2s ease; }
-.footer-linkedin svg { width: 20px; height: 20px; fill: currentColor; }
-.footer-linkedin:hover { color: var(--claro); }
+/* LinkedIn y correo en el pie, como iconos */
+.footer-social { display: flex; align-items: center; gap: 14px; height: 30px; }
+.footer-icon { display: inline-flex; color: var(--bruma); transition: color 0.2s ease; }
+.footer-icon svg { width: 22px; height: 22px; fill: currentColor; }
+.footer-icon .cut { fill: none; stroke: var(--noche); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.footer-icon:hover { color: var(--claro); }
