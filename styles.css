@@ -1046,3 +1046,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 /* Aviso de protección de datos: todo el texto igual, sin destacados */
 .form-legal strong { font-weight: inherit; color: inherit; }
 .form-legal a { color: inherit; }
+
+/* LinkedIn en el pie, junto al correo */
+.footer-social { display: flex; align-items: center; gap: 14px; }
+.footer-linkedin { display: inline-flex; color: var(--bruma); transition: color 0.2s ease; }
+.footer-linkedin svg { width: 20px; height: 20px; fill: currentColor; }
+.footer-linkedin:hover { color: var(--claro); }
