@@ -1062,10 +1062,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 /* Logos de las otras líneas de Kalokai, debajo del sello de FUNDAE (como en tech.kalokai.es) */
 .footer-family { display: flex; align-items: center; gap: 12px; margin-top: 28px; }
 .family-word { font-family: var(--display); font-weight: 800; font-size: 1.1rem; line-height: 1; letter-spacing: -0.045em; color: #94A3B8; text-decoration: none; transition: color 0.2s ease; }
-.family-word:hover { color: var(--claro); }
 .family-sub { color: #64748B; transition: color 0.2s ease; letter-spacing: -0.03em; margin-left: 0.18em; }
-.family-word:hover .family-educa { color: #7FA2F2; } /* azul de Kalokai Educa sobre fondo oscuro */
-.family-word:hover .family-tech { color: #8B85FF; }  /* índigo de Kalokai Tech sobre fondo oscuro */
 .family-sep { color: #475569; font-size: 1.1rem; line-height: 1; }
 
 /* Móvil: sello de FUNDAE y logos al final del pie, justo antes del copyright */
