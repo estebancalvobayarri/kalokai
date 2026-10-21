@@ -1128,3 +1128,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .recognition-grid { grid-template-columns: 1fr; }
   .recognition-art img { border-radius: var(--radius-md); }
 }
+/* Título y texto uno debajo del otro, en una sola columna */
+.recognition-head { grid-template-columns: 1fr; align-items: start; }
+.recognition-head .h2 { max-width: none; }
+.recognition-head .intro { max-width: none; }
