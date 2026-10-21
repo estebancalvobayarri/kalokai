@@ -1132,3 +1132,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 .recognition-head { grid-template-columns: 1fr; align-items: start; }
 .recognition-head .h2 { max-width: none; }
 .recognition-head .intro { max-width: none; }
+@media (min-width: 901px) {
+  .recognition-head { justify-items: center; text-align: center; }
+  .recognition-head .intro { text-wrap: balance; }
+}
