@@ -1136,3 +1136,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .recognition-head { justify-items: center; text-align: center; }
   .recognition-head .intro { text-wrap: balance; }
 }
+
+/* Crédito «EC · Diseño y web»: abajo a la derecha, a la altura de kalokai educa | kalokai tech */
+.footer-contact { align-self: stretch; }
+.footer-credit { display: block; height: 15px; width: auto; margin-top: auto; }
+@media (max-width: 680px) {
+  .footer-credit { order: 7; margin-top: 28px; }
+}
