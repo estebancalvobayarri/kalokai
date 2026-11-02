@@ -1139,7 +1139,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 /* Crédito «EC · Diseño y web»: abajo a la derecha, a la altura de kalokai educa | kalokai tech */
 .footer-contact { align-self: stretch; }
-.footer-credit { display: block; height: 13.5px; width: auto; margin-top: auto; }
+.footer-credit { display: block; margin-top: auto; transition: filter 0.2s ease; }
+.footer-credit img { display: block; height: 13.5px; width: auto; }
+.footer-credit:hover { filter: brightness(1.45); }
 @media (max-width: 680px) {
   .footer-credit { order: 7; margin-top: 28px; }
 }
