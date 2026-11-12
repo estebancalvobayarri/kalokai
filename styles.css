@@ -1149,21 +1149,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 /* Equipo Kalokai */
 
 .team { padding: var(--section) 0; }
+.team-list { display: grid; }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.member {
-  background: var(--medianoche);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.member-media { position: relative; }
+.member-media { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
 .member-photo {
   display: block;
   width: 100%;
@@ -1171,55 +1159,82 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   height: auto;
   object-fit: cover;
   background: var(--linea);
+  /* Capa suave para que todas las fotos tengan el mismo tono */
+  filter: saturate(0.82) contrast(1.04) brightness(0.97);
 }
-.member-body {
-  padding: clamp(22px, 2.2vw, 30px);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.member-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(14,23,38,0) 55%, rgba(24,37,64,0.55) 100%),
+    rgba(24,37,64,0.12);
 }
+
 .member-area {
-  margin: 0 0 14px;
-  font-size: 0.72rem;
+  margin: 0 0 16px;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.07em;
-  white-space: nowrap;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ambar);
 }
 .member-name {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.6rem, 1.3rem + 0.7vw, 2rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  margin: 0 0 6px;
+  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
 }
-.member-role { color: var(--bruma); font-weight: 500; margin: 0 0 18px; }
-.member-bio { color: var(--niebla); line-height: 1.6; margin: 0 0 22px; }
+.member-role { color: var(--bruma); font-size: 1.125rem; font-weight: 500; margin: 0 0 24px; }
+.member-bio { color: var(--niebla); font-size: 1.0625rem; line-height: 1.65; margin: 0 0 28px; max-width: 34em; }
 .member-link {
-  margin-top: auto;
   color: var(--claro);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid var(--ambar);
-  align-self: flex-start;
   padding-bottom: 2px;
 }
 .member-link:hover { color: var(--ambar); }
 
-@media (max-width: 1100px) {
-  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* Opción 1: filas alternas, foto grande a un lado y texto al otro */
+.team-filas .team-list { gap: clamp(72px, 9vw, 128px); }
+.team-filas .member {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
 }
-@media (max-width: 600px) {
-  .team-grid { grid-template-columns: 1fr; }
-}
+.team-filas .member-media { max-width: 440px; }
+.team-filas .member:nth-child(even) .member-media { order: 2; justify-self: end; }
+.team-filas .member:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.team-filas .member + .member { border-top: 1px solid var(--linea); padding-top: clamp(72px, 9vw, 128px); }
 
-/* Capa suave para que todas las fotos tengan el mismo tono */
-.member-photo { filter: saturate(0.82) contrast(1.04) brightness(0.97); }
-.member-media::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(14,23,38,0) 55%, rgba(24,37,64,0.55) 100%),
-    rgba(24,37,64,0.12);
+/* Opción 2: dos columnas abiertas, foto mediana junto al texto */
+.team-pares .team-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(56px, 7vw, 96px) clamp(40px, 6vw, 96px);
+}
+.team-pares .member {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: clamp(20px, 2.5vw, 36px);
+  align-items: start;
+  border-top: 1px solid var(--linea);
+  padding-top: 32px;
+}
+.team-pares .member-name { font-size: clamp(1.8rem, 1.4rem + 1vw, 2.4rem); }
+.team-pares .member-role { font-size: 1rem; margin-bottom: 16px; }
+.team-pares .member-bio { font-size: 1rem; margin-bottom: 20px; }
+
+@media (max-width: 980px) {
+  .team-pares .team-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .team-filas .member,
+  .team-filas .member:nth-child(even) { grid-template-columns: 1fr; gap: 28px; }
+  .team-filas .member:nth-child(even) .member-media { order: 0; justify-self: start; }
+  .team-filas .member-media { max-width: 100%; }
+}
+@media (max-width: 560px) {
+  .team-pares .member { grid-template-columns: 1fr; }
 }
