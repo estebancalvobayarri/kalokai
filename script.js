@@ -13,7 +13,8 @@
     ['index.html', 'Inicio'],
     ['bienestar-laboral.html', 'Bienestar laboral'],
     ['primeros-auxilios.html', 'Primeros auxilios'],
-    ['formacion-bonificada.html', 'Formación bonificada']
+    ['formacion-bonificada.html', 'Formación bonificada'],
+    ['equipo.html', 'Equipo']
   ];
   var cabecera = document.querySelector('.header-inner');
   if (cabecera) {

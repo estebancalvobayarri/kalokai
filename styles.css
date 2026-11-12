@@ -1145,3 +1145,81 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 @media (max-width: 680px) {
   .footer-credit { order: 7; margin-top: 28px; }
 }
+
+/* Equipo Kalokai */
+
+.team { padding: var(--section) 0; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.member {
+  background: var(--medianoche);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.member-media { position: relative; }
+.member-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  background: var(--linea);
+}
+.member-body {
+  padding: clamp(22px, 2.2vw, 30px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.member-area {
+  margin: 0 0 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: var(--ambar);
+}
+.member-name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 1.3rem + 0.7vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0 0 6px;
+}
+.member-role { color: var(--bruma); font-weight: 500; margin: 0 0 18px; }
+.member-bio { color: var(--niebla); line-height: 1.6; margin: 0 0 22px; }
+.member-link {
+  margin-top: auto;
+  color: var(--claro);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ambar);
+  align-self: flex-start;
+  padding-bottom: 2px;
+}
+.member-link:hover { color: var(--ambar); }
+
+@media (max-width: 1100px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+/* Capa suave para que todas las fotos tengan el mismo tono */
+.member-photo { filter: saturate(0.82) contrast(1.04) brightness(0.97); }
+.member-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(14,23,38,0) 55%, rgba(24,37,64,0.55) 100%),
+    rgba(24,37,64,0.12);
+}
