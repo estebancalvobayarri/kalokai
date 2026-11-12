@@ -38,7 +38,11 @@
   </header>
 
   <main id="contenido">
-    <section class="hero">
+    <section class="hero hero-photo">
+      <picture>
+        <source media="(max-width: 680px)" srcset="hero-formacion-movil.jpg" width="599" height="576">
+        <img class="hero-bg" src="hero-formacion.jpg" width="1024" height="576" alt="" fetchpriority="high">
+      </picture>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1 class="display">Bienestar para tu empresa.</h1>
@@ -47,13 +51,6 @@
             <a class="btn" href="#solicitud" data-solicitud>Solicita una propuesta</a>
             <a class="link" href="#enfoque">Conoce nuestro enfoque</a>
           </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="47" class="ring"></circle>
-            <path d="M18 46 A32 32 0 0 0 82 46" class="art-arc"></path>
-            <circle cx="50" cy="27" r="15" class="art-dot"></circle>
-          </svg>
         </div>
       </div>
     </section>
