@@ -248,8 +248,7 @@ p { margin: 0 0 1em; }
   z-index: -1;
   background: linear-gradient(180deg, rgba(14, 23, 38, 0), var(--noche));
 }
-.hero-photo .hero-grid { width: 100%; grid-template-columns: minmax(0, 1fr); }
-.hero-photo .hero-copy { max-width: 640px; }
+.hero-photo .hero-grid { width: 100%; }
 
 /* El único movimiento automático: el símbolo se dibuja al cargar */
 @media (prefers-reduced-motion: no-preference) {
@@ -845,7 +844,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 @media (max-width: 680px) {
   .hero-art { max-width: 180px; }
-  .hero-photo { min-height: 0; align-items: flex-end; padding-top: 260px; }
+  .hero-photo { min-height: 0; align-items: flex-end; padding-top: 150px; }
   .hero-photo .hero-bg { left: 0; width: 100%; height: 380px; bottom: auto; object-position: 0% 40%; }
   .hero-photo::before { background: linear-gradient(180deg, rgba(14, 23, 38, 0.48) 0px, rgba(14, 23, 38, 0.66) 180px, var(--noche) 380px); }
   .hero-photo::after { display: none; }
